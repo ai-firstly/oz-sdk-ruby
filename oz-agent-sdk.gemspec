@@ -10,15 +10,15 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Ruby SDK for the Oz API — Warp\'s cloud agent platform'
   spec.description   = 'Ruby client library for the Oz API, providing convenient access to run and ' \
                        'manage cloud agents: runs, schedules, agent identities, environments, and artifacts.'
-  spec.homepage      = 'https://github.com/warpdotdev/oz-sdk-ruby'
+  spec.homepage      = 'https://github.com/ai-firstly/oz-sdk-ruby'
   spec.license       = 'Apache-2.0'
   spec.required_ruby_version = '>= 3.1.0'
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
-  spec.metadata['source_code_uri'] = 'https://github.com/warpdotdev/oz-sdk-ruby'
-  spec.metadata['changelog_uri'] = 'https://github.com/warpdotdev/oz-sdk-ruby/blob/main/CHANGELOG.md'
+  spec.metadata['source_code_uri'] = 'https://github.com/ai-firstly/oz-sdk-ruby'
+  spec.metadata['changelog_uri'] = 'https://github.com/ai-firstly/oz-sdk-ruby/blob/master/CHANGELOG.md'
   spec.metadata['documentation_uri'] = 'https://rubydoc.info/gems/oz-agent-sdk'
-  spec.metadata['bug_tracker_uri'] = 'https://github.com/warpdotdev/oz-sdk-ruby/issues'
+  spec.metadata['bug_tracker_uri'] = 'https://github.com/ai-firstly/oz-sdk-ruby/issues'
   spec.metadata['rubygems_mfa_required'] = 'true'
 
   spec.files = Dir.chdir(File.expand_path(__dir__)) do

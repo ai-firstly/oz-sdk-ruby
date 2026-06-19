@@ -1,6 +1,6 @@
 # Oz Ruby SDK
 
-[![CI](https://github.com/warpdotdev/oz-sdk-ruby/actions/workflows/ci.yml/badge.svg)](https://github.com/warpdotdev/oz-sdk-ruby/actions/workflows/ci.yml)
+[![CI](https://github.com/ai-firstly/oz-sdk-ruby/actions/workflows/ci.yml/badge.svg)](https://github.com/ai-firstly/oz-sdk-ruby/actions/workflows/ci.yml)
 [![Gem Version](https://img.shields.io/gem/v/oz-agent-sdk.svg)](https://rubygems.org/gems/oz-agent-sdk)
 [![Ruby](https://img.shields.io/badge/ruby-%3E%3D%203.1-CC342D.svg)](https://www.ruby-lang.org)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)

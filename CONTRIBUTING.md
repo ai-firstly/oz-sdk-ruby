@@ -8,7 +8,7 @@ The Ruby toolchain is managed with [mise](https://mise.jdx.dev). The pinned defa
 **Ruby 4.0** (see [`mise.toml`](mise.toml)).
 
 ```sh
-git clone https://github.com/warpdotdev/oz-sdk-ruby.git
+git clone https://github.com/ai-firstly/oz-sdk-ruby.git
 cd oz-sdk-ruby
 mise install        # install the pinned Ruby (4.0.x)
 make install        # bundle install
@@ -43,7 +43,7 @@ All tasks are available through the `Makefile` (run `make help` to list them):
 
 ## Pull requests
 
-1. Create a feature branch off `main`.
+1. Create a feature branch off `master`.
 2. Make your change with tests and documentation.
 3. Ensure `make ci` passes locally.
 4. Open a PR describing the change and its motivation.

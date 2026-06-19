@@ -4,10 +4,6 @@ module Oz
   # Base class for every error raised by the SDK.
   class Error < StandardError; end
 
-  # Raised when the SDK is misconfigured before any request is made
-  # (e.g. a missing API key).
-  class ConfigurationError < Error; end
-
   # Base class for all errors that originate from interacting with the API.
   #
   # Carries the HTTP status code, the (parsed) response body, a machine readable

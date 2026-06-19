@@ -26,5 +26,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Oz::Model` response wrapper with method/`[]` access and recursive nesting.
 - Typed error hierarchy mapping HTTP status codes to exception classes.
 
-[Unreleased]: https://github.com/warpdotdev/oz-sdk-ruby/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/warpdotdev/oz-sdk-ruby/releases/tag/v0.1.0
+[Unreleased]: https://github.com/ai-firstly/oz-sdk-ruby/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/ai-firstly/oz-sdk-ruby/releases/tag/v0.1.0

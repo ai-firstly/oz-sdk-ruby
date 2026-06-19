@@ -49,6 +49,21 @@ RSpec.describe Oz::Client do
       expect(stub).to have_been_requested
     end
 
+    it 'keeps the bearer token out of the public default_headers reader' do
+      headers = build_client.default_headers
+      expect(headers).not_to have_key('Authorization')
+      expect(headers.values).not_to include(a_string_including('test-key'))
+    end
+
+    it 'lets a per-request header override the Authorization' do
+      stub = stub_request(:get, "#{BASE}/agent")
+             .with(headers: { 'Authorization' => 'Bearer override' })
+             .to_return(status: 200, body: '{}', headers: { 'Content-Type' => 'application/json' })
+
+      build_client.get('/agent', headers: { 'Authorization' => 'Bearer override' })
+      expect(stub).to have_been_requested
+    end
+
     it 'merges custom default headers' do
       stub = stub_request(:get, "#{BASE}/agent")
              .with(headers: { 'X-Custom' => 'yes' })

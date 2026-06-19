@@ -8,7 +8,6 @@ Every failure raised by the SDK descends from `Oz::Error`. API failures specific
 ```
 StandardError
 └── Oz::Error
-    ├── Oz::ConfigurationError
     └── Oz::APIError
         ├── Oz::APIConnectionError
         │   └── Oz::APITimeoutError

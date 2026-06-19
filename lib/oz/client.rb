@@ -128,6 +128,11 @@ module Oz
 
     def apply_headers(req, headers)
       @default_headers.each { |key, value| req.headers[key.to_s] = value }
+      # Injected per-request rather than stored in +default_headers+ so the
+      # public reader never exposes the bearer token. Set after the default
+      # headers (so it wins over any custom Authorization there) but before the
+      # per-request headers (which may still override it).
+      req.headers['Authorization'] = "Bearer #{@api_key}"
       return unless headers
 
       headers.each { |key, value| req.headers[key.to_s] = value }
@@ -263,7 +268,6 @@ module Oz
       }
       headers.merge!(parse_env_headers(ENV.fetch('OZ_API_CUSTOM_HEADERS', nil)))
       headers.merge!(stringify_headers(custom)) if custom
-      headers['Authorization'] = "Bearer #{@api_key}"
       headers
     end
 
@@ -273,7 +277,7 @@ module Oz
 
       raw.split("\n").each_with_object({}) do |line, acc|
         colon = line.index(':')
-        next unless colon && colon >= 0
+        next unless colon
 
         key = line[0...colon].strip
         acc[key] = line[(colon + 1)..].strip unless key.empty?
@@ -288,8 +292,10 @@ module Oz
       Faraday.new(url: @base_url) do |conn|
         conn.request :json
         conn.response :json, content_type: /\bjson/
-        conn.options.timeout = @timeout
-        conn.options.open_timeout = [@timeout, 10].min
+        if @timeout
+          conn.options.timeout = @timeout
+          conn.options.open_timeout = [@timeout, 10].min
+        end
         conn.options.params_encoder = Faraday::FlatParamsEncoder
         conn.response :logger, @logger, headers: false, bodies: false if @logger
         conn.adapter @adapter
